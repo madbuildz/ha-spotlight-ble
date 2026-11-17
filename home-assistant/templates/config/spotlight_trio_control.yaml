@@ -1,0 +1,31 @@
+alias: Spotlight Trio control
+description: Shared ShowHome preset/effect control. Off, brightness and arbitrary
+  RGB deliberately fail until their protocol is verified.
+mode: queued
+max: 30
+fields:
+  slot:
+    required: true
+    selector:
+      select:
+        options:
+        - spotlight_trio_1
+        - spotlight_trio_2
+  operation:
+    required: true
+    selector:
+      select:
+        options:
+        - 'on'
+        - 'off'
+        - preset
+        - effect
+  option:
+    selector:
+      text: {}
+sequence:
+- action: spotlight_ble_control.control
+  data:
+    slot: '{{ slot }}'
+    operation: '{{ operation }}'
+    option: '{{ option | default('''') }}'

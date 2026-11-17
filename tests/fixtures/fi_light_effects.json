@@ -1,0 +1,140 @@
+{
+  "source": "Fi Light Android com.we.glight 1.458: resource names and f0.a mode-byte table",
+  "effects": [
+    {
+      "index": 0,
+      "name": "Pulsating rainbow",
+      "mode_hex": "25"
+    },
+    {
+      "index": 1,
+      "name": "Pulsating red",
+      "mode_hex": "26"
+    },
+    {
+      "index": 2,
+      "name": "Pulsating green",
+      "mode_hex": "27"
+    },
+    {
+      "index": 3,
+      "name": "Pulsating blue",
+      "mode_hex": "28"
+    },
+    {
+      "index": 4,
+      "name": "Pulsating yellow",
+      "mode_hex": "29"
+    },
+    {
+      "index": 5,
+      "name": "Pulsating cyan",
+      "mode_hex": "2A"
+    },
+    {
+      "index": 6,
+      "name": "Pulsating purple",
+      "mode_hex": "2B"
+    },
+    {
+      "index": 7,
+      "name": "Pulsating white",
+      "mode_hex": "2C"
+    },
+    {
+      "index": 8,
+      "name": "Pulsating red/green",
+      "mode_hex": "2D"
+    },
+    {
+      "index": 9,
+      "name": "Pulsating red/blue",
+      "mode_hex": "2E"
+    },
+    {
+      "index": 10,
+      "name": "Pulsating green/blue",
+      "mode_hex": "2F"
+    },
+    {
+      "index": 11,
+      "name": "Flashing rainbow",
+      "mode_hex": "30"
+    },
+    {
+      "index": 12,
+      "name": "Flashing red",
+      "mode_hex": "31"
+    },
+    {
+      "index": 13,
+      "name": "Flashing green",
+      "mode_hex": "32"
+    },
+    {
+      "index": 14,
+      "name": "Flashing blue",
+      "mode_hex": "33"
+    },
+    {
+      "index": 15,
+      "name": "Flashing yellow",
+      "mode_hex": "34"
+    },
+    {
+      "index": 16,
+      "name": "Flashing cyan",
+      "mode_hex": "35"
+    },
+    {
+      "index": 17,
+      "name": "Flashing purple",
+      "mode_hex": "36"
+    },
+    {
+      "index": 18,
+      "name": "Flashing white",
+      "mode_hex": "37"
+    },
+    {
+      "index": 19,
+      "name": "Jumping rainbow",
+      "mode_hex": "38"
+    },
+    {
+      "index": 20,
+      "name": "Pulsating warm white",
+      "mode_hex": "51"
+    },
+    {
+      "index": 21,
+      "name": "Pulsating cold white",
+      "mode_hex": "52"
+    },
+    {
+      "index": 22,
+      "name": "Pulsating ww,cw",
+      "mode_hex": "53"
+    },
+    {
+      "index": 23,
+      "name": "Flashing warm white",
+      "mode_hex": "54"
+    },
+    {
+      "index": 24,
+      "name": "Flashing cold white",
+      "mode_hex": "55"
+    },
+    {
+      "index": 25,
+      "name": "Flashing ww,cw",
+      "mode_hex": "56"
+    },
+    {
+      "index": 26,
+      "name": "Jumping ww,cw",
+      "mode_hex": "57"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Local device configuration and credentials
+secrets.yaml
+secrets.*.yaml
+!secrets.example.yaml
+lights-bluetooth-proxy.yaml
+.env
+.env.*
+!.env.example
+
+# Generated ESPHome/PlatformIO files and firmware
+.esphome/
+.pio/
+build/
+*.bin
+*.elf
+*.map
+
+# Local tools and editor files
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/

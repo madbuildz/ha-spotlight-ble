@@ -1,0 +1,49 @@
+{
+  "title": "Spotlight BLE",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a Bluetooth spotlight",
+        "description": "Add one physical controller. Generic Bluetooth must already be configured for it. Leave the advertised name empty for Fi Light; ShowHome requires its full LA2 name.",
+        "data": {
+          "controller_type": "Controller type",
+          "name": "Device name",
+          "target_entity": "Generic Bluetooth device",
+          "advertised_name": "ShowHome advertised name"
+        }
+      }
+    },
+    "error": {
+      "name_required": "Enter a name.",
+      "invalid_target": "Choose a Generic Bluetooth binary sensor.",
+      "already_configured": "This Bluetooth device has already been added.",
+      "invalid_advertised_name": "Enter the full ShowHome name, for example LA2000012A1B2.",
+      "invalid_type": "Choose a supported controller type."
+    },
+    "abort": {
+      "already_configured": "This Bluetooth device has already been added."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Spotlight settings",
+        "description": "Change this controller’s name or Bluetooth target. Saving sends no light commands.",
+        "data": {
+          "name": "Device name",
+          "target_entity": "Generic Bluetooth device",
+          "advertised_name": "ShowHome advertised name"
+        }
+      }
+    },
+    "error": {
+      "name_required": "Enter a name.",
+      "invalid_target": "Choose a Generic Bluetooth binary sensor.",
+      "already_configured": "This Bluetooth device belongs to another configured spotlight.",
+      "invalid_advertised_name": "Enter the full ShowHome name, for example LA2000012A1B2."
+    },
+    "abort": {
+      "no_device": "This is an empty legacy migration entry. Add a new Spotlight BLE device instead."
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "control": {
+    "name": "Control spotlight",
+    "description": "Advanced and legacy controls. Normal use is through the light and effect-speed entities.",
+    "fields": {
+      "slot": {
+        "description": "Legacy compatibility only: the saved key of a migrated, configured controller. Use entity_id for new automations.",
+        "selector": {
+          "text": {}
+        }
+      },
+      "operation": {
+        "required": true,
+        "selector": {
+          "select": {
+            "options": [
+              "on",
+              "off",
+              "brightness",
+              "color",
+              "mode",
+              "preset",
+              "effect",
+              "speed"
+            ]
+          }
+        }
+      },
+      "brightness": {
+        "selector": {
+          "number": {
+            "min": 0,
+            "max": 255
+          }
+        }
+      },
+      "hs": {
+        "description": "Hue (0\u2013360) and saturation (0\u2013100).",
+        "selector": {
+          "object": {}
+        }
+      },
+      "option": {
+        "selector": {
+          "text": {}
+        }
+      },
+      "speed": {
+        "description": "Fi Light effect speed: 1 slowest, 31 fastest.",
+        "selector": {
+          "number": {
+            "min": 1,
+            "max": 31,
+            "step": 1,
+            "mode": "slider"
+          }
+        }
+      },
+      "preset": {
+        "description": "Optional Trio preset, applied atomically with its animation.",
+        "selector": {
+          "text": {}
+        }
+      },
+      "effect": {
+        "description": "Optional Trio animation, applied atomically with its preset.",
+        "selector": {
+          "text": {}
+        }
+      },
+      "entity_id": {
+        "description": "A light created by Spotlight BLE. Choose this or a legacy slot, not both.",
+        "selector": {
+          "entity": {
+            "filter": {
+              "domain": "light",
+              "integration": "spotlight_ble_control"
+            }
+          }
+        }
+      }
+    }
+  }
+}

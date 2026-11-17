@@ -1,0 +1,45 @@
+alias: Floodlight control
+description: Shared Fi Light commands; each slot has its own assignment and remembered
+  settings.
+mode: queued
+max: 30
+fields:
+  slot:
+    required: true
+    selector:
+      select:
+        options:
+        - floodlight_1
+        - floodlight_2
+        - floodlight_3
+        - floodlight_4
+  operation:
+    required: true
+    selector:
+      select:
+        options:
+        - 'on'
+        - 'off'
+        - color
+        - brightness
+        - mode
+  brightness:
+    selector:
+      number:
+        min: 0
+        max: 255
+  hs:
+    selector:
+      object: {}
+  option:
+    selector:
+      text: {}
+sequence:
+- action: spotlight_ble_control.control
+  data:
+    slot: '{{ slot }}'
+    operation: '{{ operation }}'
+    brightness: '{{ brightness | default((states(''input_text.'' ~ slot ~ ''_settings'')
+      | from_json({})).get(''b'', 128)) }}'
+    hs: '{{ hs | default([280, 100]) | list }}'
+    option: '{{ option | default('''') }}'

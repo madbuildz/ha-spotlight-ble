@@ -1,0 +1,170 @@
+[
+  {
+    "slot": "floodlight_1",
+    "config": {
+      "name": "Floodlight 1 Mode",
+      "state": "{{ (states('input_text.floodlight_1_settings') | from_json({})).get('mode', 'Color') }}",
+      "options": "{{ [\"Color\",\"White channel 1\",\"White channel 2\",\"Both white channels\",\"White pulse\",\"White blink\"] }}",
+      "select_option": [
+        {
+          "action": "script.floodlight_control",
+          "data": {
+            "slot": "floodlight_1",
+            "operation": "mode",
+            "option": "{{ option }}"
+          }
+        }
+      ],
+      "additional_options": {
+        "availability": "{% set config = (states('input_text.floodlight_1_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+      }
+    }
+  },
+  {
+    "slot": "floodlight_2",
+    "config": {
+      "name": "Floodlight 2 Mode",
+      "state": "{{ (states('input_text.floodlight_2_settings') | from_json({})).get('mode', 'Color') }}",
+      "options": "{{ [\"Color\",\"White channel 1\",\"White channel 2\",\"Both white channels\",\"White pulse\",\"White blink\"] }}",
+      "select_option": [
+        {
+          "action": "script.floodlight_control",
+          "data": {
+            "slot": "floodlight_2",
+            "operation": "mode",
+            "option": "{{ option }}"
+          }
+        }
+      ],
+      "additional_options": {
+        "availability": "{% set config = (states('input_text.floodlight_2_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+      }
+    }
+  },
+  {
+    "slot": "floodlight_3",
+    "config": {
+      "name": "Floodlight 3 Mode",
+      "state": "{{ (states('input_text.floodlight_3_settings') | from_json({})).get('mode', 'Color') }}",
+      "options": "{{ [\"Color\",\"White channel 1\",\"White channel 2\",\"Both white channels\",\"White pulse\",\"White blink\"] }}",
+      "select_option": [
+        {
+          "action": "script.floodlight_control",
+          "data": {
+            "slot": "floodlight_3",
+            "operation": "mode",
+            "option": "{{ option }}"
+          }
+        }
+      ],
+      "additional_options": {
+        "availability": "{% set config = (states('input_text.floodlight_3_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+      }
+    }
+  },
+  {
+    "slot": "floodlight_4",
+    "config": {
+      "name": "Floodlight 4 Mode",
+      "state": "{{ (states('input_text.floodlight_4_settings') | from_json({})).get('mode', 'Color') }}",
+      "options": "{{ [\"Color\",\"White channel 1\",\"White channel 2\",\"Both white channels\",\"White pulse\",\"White blink\"] }}",
+      "select_option": [
+        {
+          "action": "script.floodlight_control",
+          "data": {
+            "slot": "floodlight_4",
+            "operation": "mode",
+            "option": "{{ option }}"
+          }
+        }
+      ],
+      "additional_options": {
+        "availability": "{% set config = (states('input_text.floodlight_4_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+      }
+    }
+  },
+  {
+    "slot": "spotlight_trio_1",
+    "config": {
+      "name": "Spotlight Trio 1 Preset",
+      "state": "{{ (states('input_text.spotlight_trio_1_settings') | from_json({})).get('preset', 'White 3') }}",
+      "options": "{{ [\"Red\",\"Green\",\"Blue\",\"Orange\",\"Pink\",\"Aqua\",\"Gold\",\"Fuchsia\",\"Lawn green\",\"Magenta\",\"Cyan\",\"Yellow\",\"Purple\",\"White 1\",\"White 2\",\"White 3\",\"Spring\",\"Summer\",\"Autumn\",\"Winter\",\"Christmas\",\"Valentines\",\"Independence\",\"Thanksgiving\",\"St Patricks\",\"Halloween\",\"Sun\",\"Earth\",\"Multicolor\"] }}",
+      "select_option": [
+        {
+          "action": "script.spotlight_trio_control",
+          "data": {
+            "slot": "spotlight_trio_1",
+            "operation": "preset",
+            "option": "{{ option }}"
+          }
+        }
+      ],
+      "additional_options": {
+        "availability": "{% set config = (states('input_text.spotlight_trio_1_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+      }
+    }
+  },
+  {
+    "slot": "spotlight_trio_1",
+    "config": {
+      "name": "Spotlight Trio 1 Effect",
+      "state": "{{ (states('input_text.spotlight_trio_1_settings') | from_json({})).get('effect', 'Steady') }}",
+      "options": "{{ [\"Steady\",\"Blink\",\"Sparkle\",\"Alternate\",\"Fade\",\"Rolling\",\"Waves\",\"Fireworks\",\"Rainbow\",\"Color band\"] }}",
+      "select_option": [
+        {
+          "action": "script.spotlight_trio_control",
+          "data": {
+            "slot": "spotlight_trio_1",
+            "operation": "effect",
+            "option": "{{ option }}"
+          }
+        }
+      ],
+      "additional_options": {
+        "availability": "{% set config = (states('input_text.spotlight_trio_1_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+      }
+    }
+  },
+  {
+    "slot": "spotlight_trio_2",
+    "config": {
+      "name": "Spotlight Trio 2 Preset",
+      "state": "{{ (states('input_text.spotlight_trio_2_settings') | from_json({})).get('preset', 'White 3') }}",
+      "options": "{{ [\"Red\",\"Green\",\"Blue\",\"Orange\",\"Pink\",\"Aqua\",\"Gold\",\"Fuchsia\",\"Lawn green\",\"Magenta\",\"Cyan\",\"Yellow\",\"Purple\",\"White 1\",\"White 2\",\"White 3\",\"Spring\",\"Summer\",\"Autumn\",\"Winter\",\"Christmas\",\"Valentines\",\"Independence\",\"Thanksgiving\",\"St Patricks\",\"Halloween\",\"Sun\",\"Earth\",\"Multicolor\"] }}",
+      "select_option": [
+        {
+          "action": "script.spotlight_trio_control",
+          "data": {
+            "slot": "spotlight_trio_2",
+            "operation": "preset",
+            "option": "{{ option }}"
+          }
+        }
+      ],
+      "additional_options": {
+        "availability": "{% set config = (states('input_text.spotlight_trio_2_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+      }
+    }
+  },
+  {
+    "slot": "spotlight_trio_2",
+    "config": {
+      "name": "Spotlight Trio 2 Effect",
+      "state": "{{ (states('input_text.spotlight_trio_2_settings') | from_json({})).get('effect', 'Steady') }}",
+      "options": "{{ [\"Steady\",\"Blink\",\"Sparkle\",\"Alternate\",\"Fade\",\"Rolling\",\"Waves\",\"Fireworks\",\"Rainbow\",\"Color band\"] }}",
+      "select_option": [
+        {
+          "action": "script.spotlight_trio_control",
+          "data": {
+            "slot": "spotlight_trio_2",
+            "operation": "effect",
+            "option": "{{ option }}"
+          }
+        }
+      ],
+      "additional_options": {
+        "availability": "{% set config = (states('input_text.spotlight_trio_2_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+      }
+    }
+  }
+]

@@ -1,0 +1,396 @@
+{
+  "slots": [
+    {
+      "slot": "floodlight_1",
+      "name": "Floodlight 1",
+      "family": "fi",
+      "light": {
+        "name": "Floodlight 1",
+        "state": "{{ (states('input_text.floodlight_1_settings') | from_json({})).get('on', false) }}",
+        "turn_on": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_1",
+              "operation": "on"
+            }
+          }
+        ],
+        "turn_off": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_1",
+              "operation": "off"
+            }
+          }
+        ],
+        "additional_options": {
+          "availability": "{% set config = (states('input_text.floodlight_1_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+        },
+        "level": "{{ (states('input_text.floodlight_1_settings') | from_json({})).get('b', 128) }}",
+        "hs": "{{ (states('input_text.floodlight_1_settings') | from_json({})).get('hs', [280, 100]) }}",
+        "set_level": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_1",
+              "operation": "brightness",
+              "brightness": "{{ brightness }}"
+            }
+          }
+        ],
+        "set_hs": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_1",
+              "operation": "color",
+              "hs": "{{ hs }}",
+              "brightness": "{{ brightness | default((states('input_text.floodlight_1_settings') | from_json({})).get('b', 128)) }}"
+            }
+          }
+        ]
+      },
+      "availability": "{% set config = (states('input_text.floodlight_1_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+    },
+    {
+      "slot": "floodlight_2",
+      "name": "Floodlight 2",
+      "family": "fi",
+      "light": {
+        "name": "Floodlight 2",
+        "state": "{{ (states('input_text.floodlight_2_settings') | from_json({})).get('on', false) }}",
+        "turn_on": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_2",
+              "operation": "on"
+            }
+          }
+        ],
+        "turn_off": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_2",
+              "operation": "off"
+            }
+          }
+        ],
+        "additional_options": {
+          "availability": "{% set config = (states('input_text.floodlight_2_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+        },
+        "level": "{{ (states('input_text.floodlight_2_settings') | from_json({})).get('b', 128) }}",
+        "hs": "{{ (states('input_text.floodlight_2_settings') | from_json({})).get('hs', [280, 100]) }}",
+        "set_level": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_2",
+              "operation": "brightness",
+              "brightness": "{{ brightness }}"
+            }
+          }
+        ],
+        "set_hs": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_2",
+              "operation": "color",
+              "hs": "{{ hs }}",
+              "brightness": "{{ brightness | default((states('input_text.floodlight_2_settings') | from_json({})).get('b', 128)) }}"
+            }
+          }
+        ]
+      },
+      "availability": "{% set config = (states('input_text.floodlight_2_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+    },
+    {
+      "slot": "floodlight_3",
+      "name": "Floodlight 3",
+      "family": "fi",
+      "light": {
+        "name": "Floodlight 3",
+        "state": "{{ (states('input_text.floodlight_3_settings') | from_json({})).get('on', false) }}",
+        "turn_on": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_3",
+              "operation": "on"
+            }
+          }
+        ],
+        "turn_off": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_3",
+              "operation": "off"
+            }
+          }
+        ],
+        "additional_options": {
+          "availability": "{% set config = (states('input_text.floodlight_3_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+        },
+        "level": "{{ (states('input_text.floodlight_3_settings') | from_json({})).get('b', 128) }}",
+        "hs": "{{ (states('input_text.floodlight_3_settings') | from_json({})).get('hs', [280, 100]) }}",
+        "set_level": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_3",
+              "operation": "brightness",
+              "brightness": "{{ brightness }}"
+            }
+          }
+        ],
+        "set_hs": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_3",
+              "operation": "color",
+              "hs": "{{ hs }}",
+              "brightness": "{{ brightness | default((states('input_text.floodlight_3_settings') | from_json({})).get('b', 128)) }}"
+            }
+          }
+        ]
+      },
+      "availability": "{% set config = (states('input_text.floodlight_3_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+    },
+    {
+      "slot": "floodlight_4",
+      "name": "Floodlight 4",
+      "family": "fi",
+      "light": {
+        "name": "Floodlight 4",
+        "state": "{{ (states('input_text.floodlight_4_settings') | from_json({})).get('on', false) }}",
+        "turn_on": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_4",
+              "operation": "on"
+            }
+          }
+        ],
+        "turn_off": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_4",
+              "operation": "off"
+            }
+          }
+        ],
+        "additional_options": {
+          "availability": "{% set config = (states('input_text.floodlight_4_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+        },
+        "level": "{{ (states('input_text.floodlight_4_settings') | from_json({})).get('b', 128) }}",
+        "hs": "{{ (states('input_text.floodlight_4_settings') | from_json({})).get('hs', [280, 100]) }}",
+        "set_level": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_4",
+              "operation": "brightness",
+              "brightness": "{{ brightness }}"
+            }
+          }
+        ],
+        "set_hs": [
+          {
+            "action": "script.floodlight_control",
+            "data": {
+              "slot": "floodlight_4",
+              "operation": "color",
+              "hs": "{{ hs }}",
+              "brightness": "{{ brightness | default((states('input_text.floodlight_4_settings') | from_json({})).get('b', 128)) }}"
+            }
+          }
+        ]
+      },
+      "availability": "{% set config = (states('input_text.floodlight_4_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+    },
+    {
+      "slot": "spotlight_trio_1",
+      "name": "Spotlight Trio 1",
+      "family": "show",
+      "light": {
+        "name": "Spotlight Trio 1",
+        "state": "{{ (states('input_text.spotlight_trio_1_settings') | from_json({})).get('on', false) }}",
+        "turn_on": [
+          {
+            "action": "script.spotlight_trio_control",
+            "data": {
+              "slot": "spotlight_trio_1",
+              "operation": "on"
+            }
+          }
+        ],
+        "turn_off": [
+          {
+            "action": "script.spotlight_trio_control",
+            "data": {
+              "slot": "spotlight_trio_1",
+              "operation": "off"
+            }
+          }
+        ],
+        "additional_options": {
+          "availability": "{% set config = (states('input_text.spotlight_trio_1_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+        }
+      },
+      "availability": "{% set config = (states('input_text.spotlight_trio_1_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+    },
+    {
+      "slot": "spotlight_trio_2",
+      "name": "Spotlight Trio 2",
+      "family": "show",
+      "light": {
+        "name": "Spotlight Trio 2",
+        "state": "{{ (states('input_text.spotlight_trio_2_settings') | from_json({})).get('on', false) }}",
+        "turn_on": [
+          {
+            "action": "script.spotlight_trio_control",
+            "data": {
+              "slot": "spotlight_trio_2",
+              "operation": "on"
+            }
+          }
+        ],
+        "turn_off": [
+          {
+            "action": "script.spotlight_trio_control",
+            "data": {
+              "slot": "spotlight_trio_2",
+              "operation": "off"
+            }
+          }
+        ],
+        "additional_options": {
+          "availability": "{% set config = (states('input_text.spotlight_trio_2_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+        }
+      },
+      "availability": "{% set config = (states('input_text.spotlight_trio_2_settings') | from_json({})) %}{{ config.get('target', '') != '' and states(config.get('target', 'binary_sensor.unassigned')) not in ['unknown', 'unavailable'] }}"
+    }
+  ],
+  "scripts": {
+    "floodlight_control": {
+      "alias": "Floodlight control",
+      "description": "Shared Fi Light commands; each slot has its own assignment and remembered settings.",
+      "mode": "queued",
+      "max": 30,
+      "fields": {
+        "slot": {
+          "required": true,
+          "selector": {
+            "select": {
+              "options": [
+                "floodlight_1",
+                "floodlight_2",
+                "floodlight_3",
+                "floodlight_4"
+              ]
+            }
+          }
+        },
+        "operation": {
+          "required": true,
+          "selector": {
+            "select": {
+              "options": [
+                "on",
+                "off",
+                "color",
+                "brightness",
+                "mode"
+              ]
+            }
+          }
+        },
+        "brightness": {
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 255
+            }
+          }
+        },
+        "hs": {
+          "selector": {
+            "object": {}
+          }
+        },
+        "option": {
+          "selector": {
+            "text": {}
+          }
+        }
+      },
+      "sequence": [
+        {
+          "action": "spotlight_ble_control.control",
+          "data": {
+            "slot": "{{ slot }}",
+            "operation": "{{ operation }}",
+            "brightness": "{{ brightness | default((states('input_text.' ~ slot ~ '_settings') | from_json({})).get('b', 128)) }}",
+            "hs": "{{ hs | default([280, 100]) | list }}",
+            "option": "{{ option | default('') }}"
+          }
+        }
+      ]
+    },
+    "spotlight_trio_control": {
+      "alias": "Spotlight Trio control",
+      "description": "Shared ShowHome preset/effect control. Off, brightness and arbitrary RGB deliberately fail until their protocol is verified.",
+      "mode": "queued",
+      "max": 30,
+      "fields": {
+        "slot": {
+          "required": true,
+          "selector": {
+            "select": {
+              "options": [
+                "spotlight_trio_1",
+                "spotlight_trio_2"
+              ]
+            }
+          }
+        },
+        "operation": {
+          "required": true,
+          "selector": {
+            "select": {
+              "options": [
+                "on",
+                "off",
+                "preset",
+                "effect"
+              ]
+            }
+          }
+        },
+        "option": {
+          "selector": {
+            "text": {}
+          }
+        }
+      },
+      "sequence": [
+        {
+          "action": "spotlight_ble_control.control",
+          "data": {
+            "slot": "{{ slot }}",
+            "operation": "{{ operation }}",
+            "option": "{{ option | default('') }}"
+          }
+        }
+      ]
+    }
+  }
+}

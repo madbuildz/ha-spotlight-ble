@@ -1,0 +1,20 @@
+{
+  "domain": "spotlight_ble_control",
+  "name": "Spotlight BLE",
+  "version": "0.0.1-beta.1",
+  "config_flow": true,
+  "documentation": "https://github.com/madbuildz/ha-spotlight-ble",
+  "codeowners": [
+    "@madbuildz"
+  ],
+  "dependencies": [
+    "generic_bt"
+  ],
+  "iot_class": "local_push",
+  "requirements": [],
+  "issue_tracker": "https://github.com/madbuildz/ha-spotlight-ble/issues",
+  "integration_type": "device",
+  "after_dependencies": [
+    "input_text"
+  ]
+}

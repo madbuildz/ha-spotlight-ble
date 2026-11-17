@@ -1,0 +1,15 @@
+# Local build example. For HA's remote-package form, see docs/setup.md.
+packages:
+  proxy: !include esphome/xiao-c6-proxy.yaml
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+api:
+  encryption:
+    key: !secret api_encryption_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password

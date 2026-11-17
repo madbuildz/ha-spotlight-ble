@@ -1,0 +1,45 @@
+# A single script configuration body, suitable for HA's script YAML editor.
+# This forwards a freshly generated encrypted packet; it does not generate one.
+alias: ShowHome send packet
+description: Send the two chunks of one fresh CSRmesh packet consecutively.
+mode: queued
+max: 10
+fields:
+  target_entity:
+    name: Generic Bluetooth entity
+    required: true
+    selector:
+      entity:
+        domain: binary_sensor
+        integration: generic_bt
+  packet_low:
+    name: First 20 bytes as hexadecimal
+    required: true
+    selector:
+      text:
+  packet_high:
+    name: Remaining bytes as hexadecimal
+    required: true
+    selector:
+      text:
+sequence:
+  - condition: template
+    value_template: >-
+      {{ target_entity is defined and packet_low is defined and
+         packet_high is defined and
+         states(target_entity) not in ['unknown', 'unavailable'] and
+         packet_low | length == 40 and packet_high | length == 14 and
+         packet_low is match('^[0-9A-Fa-f]{40}$') and
+         packet_high is match('^[0-9A-Fa-f]{14}$') }}
+  - action: generic_bt.write_gatt
+    target:
+      entity_id: "{{ target_entity }}"
+    data:
+      target_uuid: c4edc000-9daf-11e3-8003-00025b000b00
+      data: "{{ packet_low }}"
+  - action: generic_bt.write_gatt
+    target:
+      entity_id: "{{ target_entity }}"
+    data:
+      target_uuid: c4edc000-9daf-11e3-8004-00025b000b00
+      data: "{{ packet_high }}"
